@@ -56,8 +56,9 @@ ORDER BY valor DESC LIMIT 5;
 SELECT c.nome_curso, c.valor, ca.cidade
 FROM curso AS c
 INNER JOIN campus as ca
-ON c.id_campus = ca.id_campsus
-WHERE ca.cidade = "Serra";
+ON c.id_campus = ca.id_campus
+WHERE ca.cidade LIKE "Serra"
+ORDER BY c.valor ASC LIMIT 1;
 
 -- 5. Qual o turno com mais cursos disponíveis?
 SELECT count(c.turno), c.nome_curso
