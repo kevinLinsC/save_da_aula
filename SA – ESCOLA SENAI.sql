@@ -71,6 +71,24 @@ FROM curso as c
 WHERE c.duracao > 5;
 
 -- 7. Quais os cursos com maior quantidade de alunos inscritos? - TERMINAR
+SELECT c.nome_curso, ma.id_curso
+FROM curso as c
+INNER JOIN matricula as ma
+ON c.id_curso = ma.id_curso;
+
+
+SELECT c.nome_curso, ma.id_ra, al.id_ra, al.nome
+FROM curso as c
+INNER JOIN aluno as al
+INNER JOIN matricula as ma
+ON ma.id_ra = al.id_ra;
+
+SELECT c.nome_curso, c.valor, ca.cidade
+FROM curso AS c
+INNER JOIN campus as ca
+ON c.id_campus = ca.id_campus
+WHERE ca.cidade LIKE "Serra"
+ORDER BY c.valor ASC LIMIT 1;
 
 
 -- 8. Qual a média de preço dos cursos listados? - PRONTO
@@ -81,7 +99,13 @@ FROM curso as c;
 
 -- 10. Quantos alunos estão matriculados em cada turno?
 
--- 11. Qual o campus com mais cursos?
+-- 11. Qual o campus com mais cursos? - PRONTO
+SELECT ca.cidade, ca.endereco, count(c.nome_curso) as cursos
+FROM curso as c
+INNER JOIN campus as ca
+ON ca.id_campus = c.id_campus
+GROUP BY ca.cidade
+ORDER BY cursos DESC LIMIT 1;
 
 -- 12. Quais cursos não possuem alunos cadastrados?
 
