@@ -121,7 +121,7 @@ public class Interface_update_jogo extends javax.swing.JFrame {
             
             conexao = DriverManager.getConnection(url, usuario, senha);
             
-            String sql = "UPDATE aluno SET nome_jogo = ?, genero_jogo = ?, preco_jogo = ? where id_jogo = ?";
+            String sql = "UPDATE jogo SET nome_jogo = ?, genero_jogo = ?, preco_jogo = ? where id_jogo = ?";
             
             statement = conexao.prepareStatement(sql);
             
