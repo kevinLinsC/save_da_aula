@@ -42,6 +42,9 @@ public class Interface_update_jogo extends javax.swing.JFrame {
         jfield_id_jogo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jbutton_mudar = new javax.swing.JToggleButton();
+        jlbl_id_deletado = new javax.swing.JLabel();
+        jfield_id_deletado = new javax.swing.JTextField();
+        jbutton_deletar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,6 +63,22 @@ public class Interface_update_jogo extends javax.swing.JFrame {
             }
         });
 
+        jlbl_id_deletado.setText("ID a ser deletado:");
+
+        jfield_id_deletado.setPreferredSize(new java.awt.Dimension(300, 60));
+        jfield_id_deletado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jfield_id_deletadoActionPerformed(evt);
+            }
+        });
+
+        jbutton_deletar.setText("Deletar");
+        jbutton_deletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbutton_deletarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -68,31 +87,49 @@ public class Interface_update_jogo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(72, 72, 72)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jfield_id_jogo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jfield_preco_jogo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlbl_preco_jogo)
                             .addComponent(jfield_genero_jogo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2)
-                            .addComponent(jfield_nome_jogo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jfield_id_jogo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(88, 88, 88)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jfield_id_deletado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jlbl_id_deletado)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jfield_nome_jogo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jbutton_deletar)
+                                .addGap(115, 115, 115))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(156, 156, 156)
                         .addComponent(jbutton_mudar)))
-                .addContainerGap(353, Short.MAX_VALUE))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jlbl_id_deletado))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jfield_id_jogo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jfield_id_jogo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jfield_id_deletado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jfield_nome_jogo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jfield_nome_jogo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jbutton_deletar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -139,6 +176,38 @@ public class Interface_update_jogo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jbutton_mudarActionPerformed
 
+    private void jfield_id_deletadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jfield_id_deletadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jfield_id_deletadoActionPerformed
+
+    private void jbutton_deletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbutton_deletarActionPerformed
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            Connection conexao = null;
+            PreparedStatement statement = null;
+            
+            String url = "jdbc:mysql://localhost:3306/jogos";
+            String usuario = "root";
+            String senha = "";
+            
+            conexao = DriverManager.getConnection(url, usuario, senha);
+            
+            String sql = "DELETE FROM jogo where id_jogo = ?";
+            
+            statement = conexao.prepareStatement(sql);
+
+            statement.setString(1, jfield_id_deletado.getText()); // ID
+
+            statement.executeUpdate();
+            
+            System.out.println("Deu certo");
+        } catch (SQLException ex) {
+            //Logger.getLogger(Interface_update_jogo.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Deu esse erro aqui: " + ex.getMessage());
+        }
+    }//GEN-LAST:event_jbutton_deletarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -178,11 +247,14 @@ public class Interface_update_jogo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton jbutton_deletar;
     private javax.swing.JToggleButton jbutton_mudar;
     private javax.swing.JTextField jfield_genero_jogo;
+    private javax.swing.JTextField jfield_id_deletado;
     private javax.swing.JTextField jfield_id_jogo;
     private javax.swing.JTextField jfield_nome_jogo;
     private javax.swing.JTextField jfield_preco_jogo;
+    private javax.swing.JLabel jlbl_id_deletado;
     private javax.swing.JLabel jlbl_preco_jogo;
     // End of variables declaration//GEN-END:variables
 }
